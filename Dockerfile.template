@@ -3,7 +3,9 @@ MAINTAINER https://github.com/agoloncser
 ENV container docker
 
 # from https://github.com/CentOS/CentOS-Dockerfiles/blob/master/systemd/centos7/Dockerfile
-RUN rm -f /lib/systemd/system/sysinit.target.wants/systemd-tmpfiles-setup.service;\
+RUN yum -y update && yum clean all
+RUN yum -y install systemd python3 && yum clean all && \
+rm -f /lib/systemd/system/sysinit.target.wants/systemd-tmpfiles-setup.service;\
 rm -f /lib/systemd/system/multi-user.target.wants/*;\
 rm -f /etc/systemd/system/*.wants/*;\
 rm -f /lib/systemd/system/local-fs.target.wants/*; \

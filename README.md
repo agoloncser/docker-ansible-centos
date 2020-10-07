@@ -4,7 +4,7 @@
 
 Centos-based docker images for testing Ansible code.
 
-Includes systemd and python3.
+Includes systemd and python3 and sudo.
 
 ## Running this image
 

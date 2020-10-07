@@ -3,7 +3,7 @@ version: ~> 1.0
 import: agoloncser/travis-shared-configs:docker-ansible-matrix.yml
 env:
   global:
-    - VERSION=1.${TRAVIS_BUILD_NUMBER}
+    - VERSION=2.${TRAVIS_BUILD_NUMBER}
     - FROM_DISTRO=centos
   jobs:
     - IMAGE=docker-ansible-centos7 FROM_TAG=7

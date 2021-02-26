@@ -4,18 +4,19 @@ on:
   push: {}
   pull_request: {}
   schedule:
-    - cron: "12 5 * * *"
+    - cron: "12 6 * * 3"
 
 jobs:
-  molecule:
+  build:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         include:
-          - IMAGE: docker-ansible-centos7
+          - IMAGE: "docker-ansible-centos7"
             FROM_TAG: "7"
-          - IMAGE: docker-ansible-centos8
+
+          - IMAGE: "docker-ansible-centos8"
             FROM_TAG: "8"
 
     steps:
